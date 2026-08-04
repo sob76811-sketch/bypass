@@ -5,7 +5,7 @@ local d = game:GetService("UserInputService")
 local e = a.LocalPlayer 
 local f = workspace.CurrentCamera
 
--- Limpieza preventiva de instancias previas
+-- Limpieza preventiva
 if b:FindFirstChild("HermanosCPLoader_Premium") then 
     b.HermanosCPLoader_Premium:Destroy() 
 end
@@ -22,24 +22,24 @@ local function k(l) if l or j() then return math.clamp(math.floor(i()*0.88), 280
 
 local n = {
     es = {
-        choose = "Elige tu dispositivo:", 
-        pc = "PC / COMPUTADORA", 
-        pcD = "Menu completo en pantalla.", 
-        mob = "CELULAR / MOVIL", 
-        mobD = "Bolita flotante para abrir el menu.", 
-        requesting = "[HCP] Cargando script ", 
+        choose = "SELECCIONA TU PLATAFORMA", 
+        pc = "DESK / COMPUTADORA", 
+        pcD = "Panel completo con visuales de alta precisión.", 
+        mob = "MOBILE / CELULAR", 
+        mobD = "Widget flotante estético e intuitivo.", 
+        requesting = "[HCP ELITE] Inyectando panel ", 
         kickLoad = "Hermanos CP // Error al cargar script", 
-        protected = "Protected | Unified Edition"
+        protected = "Protected | Elite Edition"
     },
     en = {
-        choose = "Choose your device:", 
-        pc = "PC / COMPUTER", 
-        pcD = "Full on-screen menu.", 
-        mob = "PHONE / MOBILE", 
-        mobD = "Floating ball to open menu.", 
-        requesting = "[HCP] Loading script ", 
+        choose = "SELECT YOUR PLATFORM", 
+        pc = "DESK / COMPUTER", 
+        pcD = "Full layout with high precision visuals.", 
+        mob = "MOBILE / PHONE", 
+        mobD = "Sleek floating interactive widget.", 
+        requesting = "[HCP ELITE] Injecting panel ", 
         kickLoad = "Hermanos CP // Error loading script", 
-        protected = "Protected | Unified Edition"
+        protected = "Protected | Elite Edition"
     }
 }
 
@@ -50,7 +50,7 @@ local function p()
     return e:WaitForChild("PlayerGui", 10) or b
 end
 
--- SCRIPT PRINCIPAL OPTIMIZADO (COMPATIBLE CON XENO Y DELTA)
+-- SCRIPT PRINCIPAL REDISEÑADO & ADAPTADO
 local function runUnifiedScript()
     local Players = game:GetService("Players")
     local ReplicatedStorage = game:GetService("ReplicatedStorage")
@@ -70,99 +70,97 @@ local function runUnifiedScript()
     end
 
     local _L = (_HCP_LANG == "en") and {
-        title = "HERMANOS CP v6.2 // UNIFIED",
-        tabMain = "MAIN",
-        tabCfg = "CONFIG",
+        title = "HERMANOS CP // ELITE v6.2",
+        tabMain = "MAIN PANEL",
+        tabCfg = "SETTINGS",
         aimbot = "AIMBOT",
         esp = "ESP VISUALS",
         inv = "INV VIEW",
         tracers = "TRACERS",
         cfgSys = "CONFIG SYSTEM",
-        saveCfg = "SAVE",
-        loadCfg = "LOAD",
-        saved = "SAVED",
-        loaded = "LOADED",
-        aimMode = "AIM MODE",
-        rpgMode = "RPG MODE",
-        rpgToggle = "RPG MODE",
-        fovSize = "FOV SIZE",
-        smooth = "AIM STRENGTH",
-        target = "AIM TARGET",
+        saveCfg = "SAVE CONFIG",
+        loadCfg = "LOAD CONFIG",
+        saved = "SAVED ✓",
+        loaded = "LOADED ✓",
+        aimMode = "AIM ENGINE MODE",
+        rpgMode = "RPG PREDICTION MODE",
+        rpgToggle = "RPG SYSTEM",
+        fovSize = "FOV RADIUS",
+        smooth = "SMOOTHNESS",
+        target = "TARGET PRIORITY",
         skel = "SKELETON ESP",
-        legAura = "LEGENDARY AURA",
-        distEsp = "ESP DISTANCE: %s STUDS",
-        binds = "KEYBINDS",
-        pressKey = "...Press key!...",
-        modeToggle = "Key",
-        modeFov = "FOV",
-        modeHold = "Hold",
-        rpgDuro = "Hard",
-        rpgBacio = "Soft",
-        rpgNormal = "Normal",
-        head = "Head",
-        chest = "Chest",
-        mixed = "Mixed",
-        low = "Hard",
-        mid = "Normal",
-        high = "Soft",
-        off = "Off",
-        gold = "Gold",
-        white = "White",
-        ally = "ALLY",
+        distEsp = "MAX DISTANCE: %s STUDS",
+        binds = "HOTKEYS",
+        pressKey = "PRESS KEY...",
+        modeToggle = "AIM KEY",
+        modeFov = "AIM FOV",
+        modeHold = "AIM GAMEPAD",
+        rpgDuro = "HARD (AGGRESSIVE)",
+        rpgBacio = "SOFT (SMOOTH)",
+        rpgNormal = "BALANCED",
+        head = "HEAD",
+        chest = "CHEST",
+        mixed = "ADAPTIVE",
+        low = "HARD",
+        mid = "MEDIUM",
+        high = "SMOOTH",
+        off = "DISABLED",
+        gold = "NEON GOLD",
+        white = "CYAN WHITE",
+        ally = "TEAM",
         targetTag = "TARGET",
-        aiming = "AIMING",
-        team = "Team",
-        noTeam = "No Team",
-        pin = "Pin",
-        unpin = "Unpin",
+        aiming = "LOCKED",
+        team = "ALLY",
+        noTeam = "UNALLY",
+        pin = "LOCK",
+        unpin = "UNLOCK",
         on = "ON",
         offLabel = "OFF"
     } or {
-        title = "HERMANOS CP v6.2 // UNIFIED",
-        tabMain = "PRINCIPAL",
-        tabCfg = "CONFIG",
-        aimbot = "AIMBOT",
-        esp = "ESP VISUALS",
-        inv = "INV VIEW",
+        title = "HERMANOS CP // ELITE v6.2",
+        tabMain = "PANEL PRINCIPAL",
+        tabCfg = "CONFIGURACIÓN",
+        aimbot = "AIM",
+        esp = "ESP",
+        inv = "INV",
         tracers = "LÍNEAS",
-        cfgSys = "SISTEMA DE CONFIG",
-        saveCfg = "GUARDAR",
-        loadCfg = "CARGAR",
-        saved = "GUARDADO",
-        loaded = "CARGADO",
-        aimMode = "MODO DE AIM",
-        rpgMode = "MODO RPG",
-        rpgToggle = "MODO RPG",
-        fovSize = "TAMAÑO FOV",
-        smooth = "POTENCIA DE AIM",
-        target = "OBJETIVO DE AIM",
-        skel = "ESP PALITOS",
-        legAura = "AURA LEGENDARIAS",
-        distEsp = "DISTANCIA ESP: %s STUDS",
-        binds = "TECLAS",
-        pressKey = "...Presiona!...",
-        modeToggle = "Tecla",
-        modeFov = "FOV",
-        modeHold = "Mando",
-        rpgDuro = "Duro",
-        rpgBacio = "Suave",
-        rpgNormal = "Normal",
-        head = "Cabeza",
-        chest = "Pecho",
-        mixed = "Mixto",
-        low = "Duro",
-        mid = "Normal",
-        high = "Suave",
-        off = "Off",
-        gold = "Oro",
-        white = "Blanco",
+        cfgSys = "GESTIÓN DE PERFILES",
+        saveCfg = "GUARDAR PERFIL",
+        loadCfg = "CARGAR PERFIL",
+        saved = "GUARDADO ✓",
+        loaded = "CARGADO ✓",
+        aimMode = "MODO DE APUNTADO",
+        rpgMode = "PREDICCIÓN RPG",
+        rpgToggle = "SISTEMA RPG",
+        fovSize = "RADIO FOV",
+        smooth = "SUAVIDAD AIM",
+        target = "OBJETIVO PRIORITARIO",
+        skel = "ESP ESQUELETO",
+        distEsp = "DISTANCIA MÁX: %s STUDS",
+        binds = "TECLAS DE ACCESO",
+        pressKey = "PRESIONA...",
+        modeToggle = "AIM TECLA",
+        modeFov = "AIM FOV",
+        modeHold = "AIM MANDO",
+        rpgDuro = "AGRESIVO (DURO)",
+        rpgBacio = "SUAVE (VACÍO)",
+        rpgNormal = "BALANCEADO",
+        head = "CABEZA",
+        chest = "PECHO",
+        mixed = "ADAPTATIVO",
+        low = "DURO",
+        mid = "MEDIO",
+        high = "SUAVE",
+        off = "APAGADO",
+        gold = "ORO NEÓN",
+        white = "BLANCO CIAN",
         ally = "ALIADO",
         targetTag = "TARGET",
-        aiming = "APUNTANDO",
-        team = "Team",
-        noTeam = "No Team",
-        pin = "Pin",
-        unpin = "Unpin",
+        aiming = "LOCKED",
+        team = "ALIAR",
+        noTeam = "DESALIAR",
+        pin = "FIJAR",
+        unpin = "DESFIJAR",
         on = "ON",
         offLabel = "OFF"
     }
@@ -187,7 +185,7 @@ local function runUnifiedScript()
     local Camera = workspace.CurrentCamera or workspace:WaitForChild("Camera")
     local CONFIG_FILE = "HermanosCP_Unified_Config.json"
     local sCfg, lCfg
-    local targetController, smoothController, modeController, rpgController, skelController, legAuraController, rpgTogBtn
+    local targetController, smoothController, modeController, rpgController, skelController, rpgTogBtn
 
     local function getPingInSeconds()
         local ping = 0.04
@@ -205,6 +203,13 @@ local function runUnifiedScript()
     local tracerRayParams = RaycastParams.new()
     tracerRayParams.FilterType = Enum.RaycastFilterType.Exclude
     tracerRayParams.IgnoreWater = true
+
+    local function isPlayerInVehicle()
+        local char = LocalPlayer.Character
+        if not char then return false end
+        local hum = char:FindFirstChildOfClass("Humanoid")
+        return (hum and hum.SeatPart ~= nil) or false
+    end
 
     local function getGroundPosition(originPos, targetChar)
         local filterList = {}
@@ -272,39 +277,39 @@ local function runUnifiedScript()
 
     local Config = {
         Theme = {
-            Background      = Color3.fromRGB(11, 11, 18),
-            Header          = Color3.fromRGB(16, 16, 26),
-            Stroke          = Color3.fromRGB(0, 210, 255),
-            StrokeInactive  = Color3.fromRGB(30, 30, 45),
-            GradientStart   = Color3.fromRGB(18, 11, 32),
-            GradientEnd     = Color3.fromRGB(7, 7, 12),
-            PlayerRow       = Color3.fromRGB(20, 20, 30),
-            PlayerRowPinned = Color3.fromRGB(38, 22, 58),
+            Background      = Color3.fromRGB(9, 10, 15),
+            Header          = Color3.fromRGB(15, 16, 24),
+            Stroke          = Color3.fromRGB(157, 0, 255),
+            StrokeInactive  = Color3.fromRGB(28, 30, 45),
+            GradientStart   = Color3.fromRGB(22, 12, 38),
+            GradientEnd     = Color3.fromRGB(6, 7, 12),
+            PlayerRow       = Color3.fromRGB(16, 17, 26),
+            PlayerRowPinned = Color3.fromRGB(36, 18, 54),
             TextPrimary     = Color3.fromRGB(255, 255, 255),
-            TextSecondary   = Color3.fromRGB(160, 175, 210),
-            PinActive       = Color3.fromRGB(0, 210, 255),
-            PinInactive     = Color3.fromRGB(35, 35, 50),
-            TeamActive      = Color3.fromRGB(0, 255, 140),
-            EspNormal       = Color3.fromRGB(0, 210, 255),
-            EspPinned       = Color3.fromRGB(255, 200, 0),
-            EspTeam         = Color3.fromRGB(0, 255, 140),
-            AuraFill        = Color3.fromRGB(255, 30, 30),
-            BtnOn           = Color3.fromRGB(0, 255, 140),
-            BtnOff          = Color3.fromRGB(255, 65, 95),
-            CloseBtn        = Color3.fromRGB(35, 18, 26),
-            CloseBtnText    = Color3.fromRGB(255, 80, 100),
-            ScrollBar       = Color3.fromRGB(0, 210, 255),
-            TabActive       = Color3.fromRGB(0, 210, 255),
-            TabInactive     = Color3.fromRGB(22, 22, 35),
+            TextSecondary   = Color3.fromRGB(140, 150, 180),
+            PinActive       = Color3.fromRGB(0, 240, 255),
+            PinInactive     = Color3.fromRGB(26, 28, 42),
+            TeamActive      = Color3.fromRGB(0, 255, 136),
+            EspNormal       = Color3.fromRGB(0, 240, 255),
+            EspPinned       = Color3.fromRGB(255, 215, 0),
+            EspTeam         = Color3.fromRGB(0, 255, 136),
+            BtnOn           = Color3.fromRGB(0, 255, 136),
+            BtnOff          = Color3.fromRGB(255, 38, 88),
+            CloseBtn        = Color3.fromRGB(48, 18, 28),
+            CloseBtnText    = Color3.fromRGB(255, 75, 110),
+            ScrollBar       = Color3.fromRGB(157, 0, 255),
+            TabActive       = Color3.fromRGB(157, 0, 255),
+            TabInactive     = Color3.fromRGB(18, 19, 28),
             Gold            = Color3.fromRGB(255, 215, 0),
-            FOVNormal       = Color3.fromRGB(0, 210, 255),
-            FOVLocked       = Color3.fromRGB(255, 65, 95)
+            FOVNormal       = Color3.fromRGB(0, 240, 255),
+            FOVLocked       = Color3.fromRGB(255, 38, 88)
         },
         Binds = {
             ToggleMenu = Enum.KeyCode.Z,
             Aimbot = Enum.KeyCode.F,
             InvView = Enum.KeyCode.X,
-            GamepadAim = Enum.KeyCode.ButtonL2,
+            GamepadAimFoot = Enum.KeyCode.ButtonL2,
+            GamepadAimCar = Enum.KeyCode.ButtonL1,
             GamepadToggle = Enum.KeyCode.DPadDown
         },
         AimTarget = "Mixto",
@@ -315,7 +320,6 @@ local function runUnifiedScript()
         AimFOV    = 220,
         ShowFOV   = true,
         SkeletonStyle = "Oro",
-        LegendaryAuraEnabled = true,
         MaxNormalDistance = 1200,
         MaxSpecialDistance = 1800,
         VehicleCameraFix = true,
@@ -444,7 +448,7 @@ local function runUnifiedScript()
             tracer.Anchored = true
             tracer.CanCollide = false
             tracer.Material = Enum.Material.Neon
-            tracer.Color = Color3.fromRGB(0, 230, 255)
+            tracer.Color = Color3.fromRGB(0, 240, 255)
             tracer.Size = Vector3.new(0.08, 0.08, distance)
             tracer.CFrame = CFrame.new(fromPos, toPos) * CFrame.new(0, 0, -distance / 2)
             tracer.Parent = workspace
@@ -536,8 +540,8 @@ local function runUnifiedScript()
     local vw = (cam and cam.ViewportSize.X) or 800
     local vh = (cam and cam.ViewportSize.Y) or 600
     local isMobileUI = UserInputService.TouchEnabled and (not UserInputService.KeyboardEnabled or vw < 700)
-    local frameW = isMobileUI and math.clamp(math.floor(vw * 0.92), 280, 380) or 460
-    local frameH = isMobileUI and math.clamp(math.floor(vh * 0.72), 380, 480) or 520
+    local frameW = isMobileUI and math.clamp(math.floor(vw * 0.92), 280, 380) or 470
+    local frameH = isMobileUI and math.clamp(math.floor(vh * 0.72), 380, 480) or 530
 
     local MainFrame = Instance.new("Frame")
     MainFrame.Size = UDim2.new(0, frameW, 0, frameH)
@@ -547,45 +551,48 @@ local function runUnifiedScript()
     MainFrame.ClipsDescendants = true
     MainFrame.Parent = gui
 
-    Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 12)
-    local mainStroke = Instance.new("UIStroke") mainStroke.Color = Config.Theme.Stroke; mainStroke.Thickness = 1.2; mainStroke.Parent = MainFrame
+    Instance.new("UICorner", MainFrame).CornerRadius = UDim.new(0, 10)
+    local mainStroke = Instance.new("UIStroke") mainStroke.Color = Config.Theme.Stroke; mainStroke.Thickness = 1.5; mainStroke.Parent = MainFrame
 
     local gradient = Instance.new("UIGradient")
     gradient.Color = ColorSequence.new({
         ColorSequenceKeypoint.new(0, Config.Theme.GradientStart),
         ColorSequenceKeypoint.new(1, Config.Theme.GradientEnd),
     })
+    gradient.Rotation = 45
     gradient.Parent = MainFrame
 
     local header = Instance.new("Frame")
-    header.Size = UDim2.new(1, 0, 0, 45); header.BackgroundColor3 = Config.Theme.Header; header.Parent = MainFrame
-    Instance.new("UICorner", header).CornerRadius = UDim.new(0, 12)
+    header.Size = UDim2.new(1, 0, 0, 48); header.BackgroundColor3 = Config.Theme.Header; header.Parent = MainFrame
+    Instance.new("UICorner", header).CornerRadius = UDim.new(0, 10)
 
     local title = Instance.new("TextLabel")
     title.Font = Enum.Font.GothamBold; title.TextSize = 13; title.TextColor3 = Config.Theme.TextPrimary
-    title.Size = UDim2.new(1, -80, 1, 0); title.Position = UDim2.new(0, 15, 0, 0); title.BackgroundTransparency = 1
-    title.Text = _L.title; title.TextXAlignment = Enum.TextXAlignment.Left; title.Parent = header
+    title.Size = UDim2.new(1, -90, 1, 0); title.Position = UDim2.new(0, 16, 0, 0); title.BackgroundTransparency = 1
+    title.Text = "⚡ " .. _L.title; title.TextXAlignment = Enum.TextXAlignment.Left; title.Parent = header
 
     local minBtn = Instance.new("TextButton")
-    minBtn.Size = UDim2.new(0, 28, 0, 28); minBtn.Position = UDim2.new(1, -70, 0.5, -14)
-    minBtn.Text = "-"; minBtn.TextSize = 18; minBtn.Font = Enum.Font.GothamBold
-    minBtn.TextColor3 = Color3.fromRGB(255, 210, 80); minBtn.BackgroundColor3 = Color3.fromRGB(40, 35, 18); minBtn.Parent = header
+    minBtn.Size = UDim2.new(0, 28, 0, 28); minBtn.Position = UDim2.new(1, -68, 0.5, -14)
+    minBtn.Text = "─"; minBtn.TextSize = 14; minBtn.Font = Enum.Font.GothamBold
+    minBtn.TextColor3 = Color3.fromRGB(0, 240, 255); minBtn.BackgroundColor3 = Color3.fromRGB(18, 22, 35); minBtn.Parent = header
     Instance.new("UICorner", minBtn).CornerRadius = UDim.new(0, 6)
+    local minStroke = Instance.new("UIStroke") minStroke.Color = Color3.fromRGB(0, 240, 255); minStroke.Thickness = 1; minStroke.Transparency = 0.5; minStroke.Parent = minBtn
 
     local closeBtn = Instance.new("TextButton")
-    closeBtn.Size = UDim2.new(0, 28, 0, 28); closeBtn.Position = UDim2.new(1, -38, 0.5, -14)
-    closeBtn.Text = "X"; closeBtn.TextSize = 18; closeBtn.Font = Enum.Font.GothamBold
+    closeBtn.Size = UDim2.new(0, 28, 0, 28); closeBtn.Position = UDim2.new(1, -34, 0.5, -14)
+    closeBtn.Text = "✕"; closeBtn.TextSize = 13; closeBtn.Font = Enum.Font.GothamBold
     closeBtn.TextColor3 = Config.Theme.CloseBtnText; closeBtn.BackgroundColor3 = Config.Theme.CloseBtn; closeBtn.Parent = header
     Instance.new("UICorner", closeBtn).CornerRadius = UDim.new(0, 6)
+    local closeStroke = Instance.new("UIStroke") closeStroke.Color = Config.Theme.CloseBtnText; closeStroke.Thickness = 1.2; closeStroke.Transparency = 0.3; closeStroke.Parent = closeBtn
 
-    closeBtn.MouseEnter:Connect(function() TweenService:Create(closeBtn, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(80, 25, 40)}):Play() end)
-    closeBtn.MouseLeave:Connect(function() TweenService:Create(closeBtn, TweenInfo.new(0.15), {BackgroundColor3 = Config.Theme.CloseBtn}):Play() end)
+    closeBtn.MouseEnter:Connect(function() TweenService:Create(closeBtn, TweenInfo.new(0.12), {BackgroundColor3 = Color3.fromRGB(120, 25, 45)}):Play() end)
+    closeBtn.MouseLeave:Connect(function() TweenService:Create(closeBtn, TweenInfo.new(0.12), {BackgroundColor3 = Config.Theme.CloseBtn}):Play() end)
 
     local openBall = Instance.new("ImageButton")
-    openBall.Name = "HCPOpenBall"; openBall.Size = UDim2.new(0, 50, 0, 50); openBall.Position = UDim2.new(1, -64, 0.55, 0)
-    openBall.BackgroundColor3 = Color3.fromRGB(0, 160, 255); openBall.BorderSizePixel = 0; openBall.Visible = false; openBall.AutoButtonColor = false; openBall.Parent = gui
+    openBall.Name = "HCPOpenBall"; openBall.Size = UDim2.new(0, 52, 0, 52); openBall.Position = UDim2.new(1, -66, 0.55, 0)
+    openBall.BackgroundColor3 = Color3.fromRGB(157, 0, 255); openBall.BorderSizePixel = 0; openBall.Visible = false; openBall.AutoButtonColor = false; openBall.Parent = gui
     Instance.new("UICorner", openBall).CornerRadius = UDim.new(1, 0)
-    local openBallStroke = Instance.new("UIStroke") openBallStroke.Color = Color3.fromRGB(255, 255, 255); openBallStroke.Thickness = 2; openBallStroke.Transparency = 0.35; openBallStroke.Parent = openBall
+    local openBallStroke = Instance.new("UIStroke") openBallStroke.Color = Color3.fromRGB(0, 240, 255); openBallStroke.Thickness = 2; openBallStroke.Parent = openBall
     local openBallTxt = Instance.new("TextLabel") openBallTxt.Size = UDim2.new(1, 0, 1, 0); openBallTxt.BackgroundTransparency = 1; openBallTxt.Font = Enum.Font.GothamBold; openBallTxt.TextSize = 12; openBallTxt.TextColor3 = Color3.fromRGB(255, 255, 255); openBallTxt.Text = "HCP"; openBallTxt.Parent = openBall
 
     local ballDrag, ballStart, ballPos
@@ -604,13 +611,13 @@ local function runUnifiedScript()
     openBall.MouseButton1Click:Connect(function() MainFrame.Visible = true; openBall.Visible = false end)
     minBtn.MouseButton1Click:Connect(function() MainFrame.Visible = false; openBall.Visible = true end)
 
-    local TabBar = Instance.new("Frame") TabBar.Size = UDim2.new(1, -20, 0, 34); TabBar.Position = UDim2.new(0, 10, 0, 55); TabBar.BackgroundTransparency = 1; TabBar.Parent = MainFrame
+    local TabBar = Instance.new("Frame") TabBar.Size = UDim2.new(1, -24, 0, 36); TabBar.Position = UDim2.new(0, 12, 0, 56); TabBar.BackgroundTransparency = 1; TabBar.Parent = MainFrame
     local tabLayout = Instance.new("UIListLayout") tabLayout.FillDirection = Enum.FillDirection.Horizontal; tabLayout.Padding = UDim.new(0, 8); tabLayout.Parent = TabBar
 
     local function cTB(text, parent)
         local btn = Instance.new("TextButton") btn.Size = UDim2.new(0.5, -4, 1, 0); btn.Font = Enum.Font.GothamBold; btn.TextSize = 11; btn.Text = text; btn.TextColor3 = Config.Theme.TextPrimary; btn.BackgroundColor3 = Config.Theme.TabInactive
         Instance.new("UICorner", btn).CornerRadius = UDim.new(0, 6)
-        local stroke = Instance.new("UIStroke") stroke.Thickness = 1; stroke.Color = Config.Theme.StrokeInactive; stroke.Parent = btn
+        local stroke = Instance.new("UIStroke") stroke.Thickness = 1.2; stroke.Color = Config.Theme.StrokeInactive; stroke.Parent = btn
         btn.Parent = parent
         return btn, stroke
     end
@@ -618,25 +625,25 @@ local function runUnifiedScript()
     local TabPrincipalBtn, tabPStroke = cTB(_L.tabMain, TabBar)
     local TabConfigBtn, tabCStroke = cTB(_L.tabCfg, TabBar)
 
-    local ContentPrincipal = Instance.new("Frame") ContentPrincipal.Size = UDim2.new(1, -20, 1, -105); ContentPrincipal.Position = UDim2.new(0, 10, 0, 100); ContentPrincipal.BackgroundTransparency = 1; ContentPrincipal.Parent = MainFrame
-    local ContentConfig = Instance.new("ScrollingFrame") ContentConfig.Size = UDim2.new(1, -20, 1, -105); ContentConfig.Position = UDim2.new(0, 10, 0, 100); ContentConfig.BackgroundTransparency = 1; ContentConfig.Visible = false; ContentConfig.AutomaticCanvasSize = Enum.AutomaticSize.Y; ContentConfig.ScrollBarThickness = 2; ContentConfig.ScrollBarImageColor3 = Config.Theme.ScrollBar; ContentConfig.Parent = MainFrame
+    local ContentPrincipal = Instance.new("Frame") ContentPrincipal.Size = UDim2.new(1, -24, 1, -110); ContentPrincipal.Position = UDim2.new(0, 12, 0, 102); ContentPrincipal.BackgroundTransparency = 1; ContentPrincipal.Parent = MainFrame
+    local ContentConfig = Instance.new("ScrollingFrame") ContentConfig.Size = UDim2.new(1, -24, 1, -110); ContentConfig.Position = UDim2.new(0, 12, 0, 102); ContentConfig.BackgroundTransparency = 1; ContentConfig.Visible = false; ContentConfig.AutomaticCanvasSize = Enum.AutomaticSize.Y; ContentConfig.ScrollBarThickness = 3; ContentConfig.ScrollBarImageColor3 = Config.Theme.ScrollBar; ContentConfig.Parent = MainFrame
 
     local function sT(tabName)
         State.currentTab = tabName
-        local tInfo = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
+        local tInfo = TweenInfo.new(0.2, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
         if tabName == "Principal" then
             TweenService:Create(TabPrincipalBtn, tInfo, {BackgroundColor3 = Config.Theme.TabActive}):Play()
             TweenService:Create(TabConfigBtn, tInfo, {BackgroundColor3 = Config.Theme.TabInactive}):Play()
             TweenService:Create(tabPStroke, tInfo, {Color = Config.Theme.TabActive}):Play()
             TweenService:Create(tabCStroke, tInfo, {Color = Config.Theme.StrokeInactive}):Play()
-            TabPrincipalBtn.TextColor3 = Color3.fromRGB(10, 10, 18); TabConfigBtn.TextColor3 = Config.Theme.TextPrimary
+            TabPrincipalBtn.TextColor3 = Color3.fromRGB(255, 255, 255); TabConfigBtn.TextColor3 = Config.Theme.TextSecondary
             ContentPrincipal.Visible = true; ContentConfig.Visible = false
         else
             TweenService:Create(TabPrincipalBtn, tInfo, {BackgroundColor3 = Config.Theme.TabInactive}):Play()
             TweenService:Create(TabConfigBtn, tInfo, {BackgroundColor3 = Config.Theme.TabActive}):Play()
             TweenService:Create(tabPStroke, tInfo, {Color = Config.Theme.StrokeInactive}):Play()
             TweenService:Create(tabCStroke, tInfo, {Color = Config.Theme.TabActive}):Play()
-            TabPrincipalBtn.TextColor3 = Config.Theme.TextPrimary; TabConfigBtn.TextColor3 = Color3.fromRGB(10, 10, 18)
+            TabPrincipalBtn.TextColor3 = Config.Theme.TextSecondary; TabConfigBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
             ContentPrincipal.Visible = false; ContentConfig.Visible = true
         end
     end
@@ -645,8 +652,8 @@ local function runUnifiedScript()
     TabPrincipalBtn.MouseButton1Click:Connect(function() sT("Principal") end)
     TabConfigBtn.MouseButton1Click:Connect(function() sT("Config") end)
 
-    local TogglePanel = Instance.new("Frame") TogglePanel.Size = UDim2.new(1, 0, 0, 35); TogglePanel.BackgroundTransparency = 1; TogglePanel.Parent = ContentPrincipal
-    local grid = Instance.new("UIGridLayout") grid.CellSize = UDim2.new(0.235, 0, 0, 32); grid.CellPadding = UDim2.new(0, 5, 0, 5); grid.Parent = TogglePanel
+    local TogglePanel = Instance.new("Frame") TogglePanel.Size = UDim2.new(1, 0, 0, 36); TogglePanel.BackgroundTransparency = 1; TogglePanel.Parent = ContentPrincipal
+    local grid = Instance.new("UIGridLayout") grid.CellSize = UDim2.new(0.235, 0, 0, 34); grid.CellPadding = UDim2.new(0, 6, 0, 6); grid.Parent = TogglePanel
 
     local function cTog(parent, text)
         local btn = Instance.new("TextButton") btn.Font = Enum.Font.GothamBold; btn.TextSize = 10; btn.TextColor3 = Config.Theme.TextPrimary; btn.Text = text
@@ -661,7 +668,7 @@ local function runUnifiedScript()
     local InvToggleBtn = cTog(TogglePanel, _L.inv)
     local TracerToggleBtn = cTog(TogglePanel, _L.tracers)
 
-    local scroll = Instance.new("ScrollingFrame") scroll.Size = UDim2.new(1, 0, 1, -45); scroll.Position = UDim2.new(0, 0, 0, 45); scroll.BackgroundTransparency = 1; scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y; scroll.ScrollBarThickness = 3; scroll.ScrollBarImageColor3 = Config.Theme.ScrollBar; scroll.Parent = ContentPrincipal
+    local scroll = Instance.new("ScrollingFrame") scroll.Size = UDim2.new(1, 0, 1, -48); scroll.Position = UDim2.new(0, 0, 0, 48); scroll.BackgroundTransparency = 1; scroll.AutomaticCanvasSize = Enum.AutomaticSize.Y; scroll.ScrollBarThickness = 3; scroll.ScrollBarImageColor3 = Config.Theme.ScrollBar; scroll.Parent = ContentPrincipal
     local layout = Instance.new("UIListLayout") layout.SortOrder = Enum.SortOrder.LayoutOrder; layout.Padding = UDim.new(0, 6); layout.Parent = scroll
 
     local function uMB()
@@ -687,14 +694,14 @@ local function runUnifiedScript()
 
     local function cCCS(titleText, buttonsData, callback)
         local sectionFrame = Instance.new("Frame") sectionFrame.Size = UDim2.new(1, 0, 0, 58); sectionFrame.BackgroundTransparency = 1
-        local lbl = Instance.new("TextLabel") lbl.Size = UDim2.new(1, 0, 0, 18); lbl.Font = Enum.Font.GothamBold; lbl.TextSize = 11; lbl.TextColor3 = Config.Theme.TextSecondary; lbl.Text = titleText:upper(); lbl.TextXAlignment = Enum.TextXAlignment.Left; lbl.BackgroundTransparency = 1; lbl.Parent = sectionFrame
+        local lbl = Instance.new("TextLabel") lbl.Size = UDim2.new(1, 0, 0, 18); lbl.Font = Enum.Font.GothamBold; lbl.TextSize = 11; lbl.TextColor3 = Config.Theme.TextSecondary; lbl.Text = "► " .. titleText:upper(); lbl.TextXAlignment = Enum.TextXAlignment.Left; lbl.BackgroundTransparency = 1; lbl.Parent = sectionFrame
         
         local cycleBtn = Instance.new("TextButton") cycleBtn.Size = UDim2.new(1, 0, 0, 32); cycleBtn.Position = UDim2.new(0, 0, 0, 22); cycleBtn.Font = Enum.Font.GothamBold; cycleBtn.TextSize = 10; cycleBtn.BackgroundColor3 = Config.Theme.TabInactive; cycleBtn.TextColor3 = Config.Theme.TextPrimary
         Instance.new("UICorner", cycleBtn).CornerRadius = UDim.new(0, 6)
         local optStroke = Instance.new("UIStroke") optStroke.Thickness = 1; optStroke.Color = Config.Theme.StrokeInactive; optStroke.Parent = cycleBtn
         
         local currentIndex = 1
-        local function updateText() cycleBtn.Text = ">  " .. buttonsData[currentIndex].Label:upper() .. "  <" end
+        local function updateText() cycleBtn.Text = "[ " .. buttonsData[currentIndex].Label:upper() .. " ]" end
         
         cycleBtn.MouseButton1Click:Connect(function()
             currentIndex = (currentIndex % #buttonsData) + 1
@@ -702,10 +709,8 @@ local function runUnifiedScript()
             callback(chosenOpt.Value)
             updateText()
             TweenService:Create(cycleBtn, TweenInfo.new(0.1), {BackgroundColor3 = Config.Theme.TabActive}):Play()
-            cycleBtn.TextColor3 = Color3.fromRGB(10, 10, 18)
             task.delay(0.15, function()
                 TweenService:Create(cycleBtn, TweenInfo.new(0.15), {BackgroundColor3 = Config.Theme.TabInactive}):Play()
-                cycleBtn.TextColor3 = Config.Theme.TextPrimary
             end)
             sCfg()
         end)
@@ -724,7 +729,7 @@ local function runUnifiedScript()
     ContentConfig.UIListLayout.Padding = UDim.new(0, 14)
 
     local saveLoadSection = Instance.new("Frame") saveLoadSection.Size = UDim2.new(1, 0, 0, 58); saveLoadSection.BackgroundTransparency = 1; saveLoadSection.Parent = ContentConfig
-    local saveLoadLbl = Instance.new("TextLabel") saveLoadLbl.Size = UDim2.new(1, 0, 0, 18); saveLoadLbl.Font = Enum.Font.GothamBold; saveLoadLbl.TextSize = 11; saveLoadLbl.TextColor3 = Config.Theme.TextSecondary; saveLoadLbl.Text = _L.cfgSys; saveLoadLbl.TextXAlignment = Enum.TextXAlignment.Left; saveLoadLbl.BackgroundTransparency = 1; saveLoadLbl.Parent = saveLoadSection
+    local saveLoadLbl = Instance.new("TextLabel") saveLoadLbl.Size = UDim2.new(1, 0, 0, 18); saveLoadLbl.Font = Enum.Font.GothamBold; saveLoadLbl.TextSize = 11; saveLoadLbl.TextColor3 = Config.Theme.TextSecondary; saveLoadLbl.Text = "► " .. _L.cfgSys; saveLoadLbl.TextXAlignment = Enum.TextXAlignment.Left; saveLoadLbl.BackgroundTransparency = 1; saveLoadLbl.Parent = saveLoadSection
 
     local slContainer = Instance.new("Frame") slContainer.Size = UDim2.new(1, 0, 0, 32); slContainer.Position = UDim2.new(0, 0, 0, 22); slContainer.BackgroundTransparency = 1; slContainer.Parent = saveLoadSection
     local slLayout = Instance.new("UIListLayout") slLayout.FillDirection = Enum.FillDirection.Horizontal; slLayout.Padding = UDim.new(0, 8); slLayout.Parent = slContainer
@@ -739,7 +744,7 @@ local function runUnifiedScript()
     rpgTogBtn = Instance.new("TextButton") rpgTogBtn.Size = UDim2.new(0.72, -4, 1, 0); rpgTogBtn.Font = Enum.Font.GothamBold; rpgTogBtn.TextSize = 10; rpgTogBtn.BackgroundColor3 = Config.RPGAimEnabled and Config.Theme.BtnOn or Config.Theme.BtnOff; rpgTogBtn.TextColor3 = Config.RPGAimEnabled and Color3.fromRGB(10,10,18) or Config.Theme.TextPrimary; rpgTogBtn.Text = _L.rpgToggle .. ": " .. (Config.RPGAimEnabled and _L.on or _L.offLabel); rpgTogBtn.Parent = rpgTogFrame
     Instance.new("UICorner", rpgTogBtn).CornerRadius = UDim.new(0, 6)
 
-    local betaBadge = Instance.new("TextLabel") betaBadge.Size = UDim2.new(0.28, -2, 1, 0); betaBadge.Position = UDim2.new(0.72, 4, 0, 0); betaBadge.BackgroundColor3 = Color3.fromRGB(255, 60, 60); betaBadge.Font = Enum.Font.GothamBold; betaBadge.TextSize = 10; betaBadge.TextColor3 = Color3.fromRGB(255, 255, 255); betaBadge.Text = "BETA"; betaBadge.Parent = rpgTogFrame
+    local betaBadge = Instance.new("TextLabel") betaBadge.Size = UDim2.new(0.28, -2, 1, 0); betaBadge.Position = UDim2.new(0.72, 4, 0, 0); betaBadge.BackgroundColor3 = Color3.fromRGB(157, 0, 255); betaBadge.Font = Enum.Font.GothamBold; betaBadge.TextSize = 10; betaBadge.TextColor3 = Color3.fromRGB(255, 255, 255); betaBadge.Text = "V2 PRO"; betaBadge.Parent = rpgTogFrame
     Instance.new("UICorner", betaBadge).CornerRadius = UDim.new(0, 6)
 
     local function uRPG()
@@ -752,7 +757,7 @@ local function runUnifiedScript()
     rpgTogBtn.MouseButton1Click:Connect(function() Config.RPGAimEnabled = not Config.RPGAimEnabled; uRPG(); sCfg() end)
 
     local fovSection = Instance.new("Frame") fovSection.Size = UDim2.new(1, 0, 0, 70); fovSection.BackgroundTransparency = 1; fovSection.Parent = ContentConfig
-    local fovLbl = Instance.new("TextLabel") fovLbl.Size = UDim2.new(1, -60, 0, 18); fovLbl.Font = Enum.Font.GothamBold; fovLbl.TextSize = 11; fovLbl.TextColor3 = Config.Theme.TextSecondary; fovLbl.Text = _L.fovSize; fovLbl.TextXAlignment = Enum.TextXAlignment.Left; fovLbl.BackgroundTransparency = 1; fovLbl.Parent = fovSection
+    local fovLbl = Instance.new("TextLabel") fovLbl.Size = UDim2.new(1, -60, 0, 18); fovLbl.Font = Enum.Font.GothamBold; fovLbl.TextSize = 11; fovLbl.TextColor3 = Config.Theme.TextSecondary; fovLbl.Text = "► " .. _L.fovSize; fovLbl.TextXAlignment = Enum.TextXAlignment.Left; fovLbl.BackgroundTransparency = 1; fovLbl.Parent = fovSection
     local fovValueLbl = Instance.new("TextLabel") fovValueLbl.Size = UDim2.new(0, 55, 0, 18); fovValueLbl.Position = UDim2.new(1, -55, 0, 0); fovValueLbl.Font = Enum.Font.GothamBold; fovValueLbl.TextSize = 12; fovValueLbl.TextColor3 = Config.Theme.TabActive; fovValueLbl.Text = tostring(Config.AimFOV); fovValueLbl.TextXAlignment = Enum.TextXAlignment.Right; fovValueLbl.BackgroundTransparency = 1; fovValueLbl.Parent = fovSection
 
     local FOV_MIN, FOV_MAX = 40, 400
@@ -807,12 +812,12 @@ local function runUnifiedScript()
     end)
 
     local sliderSec = Instance.new("Frame") sliderSec.Size = UDim2.new(1, 0, 0, 65); sliderSec.BackgroundTransparency = 1; sliderSec.Parent = ContentConfig
-    local sliderLbl = Instance.new("TextLabel") sliderLbl.Size = UDim2.new(1, 0, 0, 18); sliderLbl.Font = Enum.Font.GothamBold; sliderLbl.TextSize = 11; sliderLbl.TextColor3 = Config.Theme.TextSecondary; sliderLbl.Text = string.format(_L.distEsp, tostring(Config.MaxNormalDistance)); sliderLbl.TextXAlignment = Enum.TextXAlignment.Left; sliderLbl.BackgroundTransparency = 1; sliderLbl.Parent = sliderSec
+    local sliderLbl = Instance.new("TextLabel") sliderLbl.Size = UDim2.new(1, 0, 0, 18); sliderLbl.Font = Enum.Font.GothamBold; sliderLbl.TextSize = 11; sliderLbl.TextColor3 = Config.Theme.TextSecondary; sliderLbl.Text = string.format("► " .. _L.distEsp, tostring(Config.MaxNormalDistance)); sliderLbl.TextXAlignment = Enum.TextXAlignment.Left; sliderLbl.BackgroundTransparency = 1; sliderLbl.Parent = sliderSec
 
     local sliderCont = Instance.new("Frame") sliderCont.Size = UDim2.new(1, 0, 0, 32); sliderCont.Position = UDim2.new(0, 0, 0, 22); sliderCont.BackgroundColor3 = Config.Theme.TabInactive; sliderCont.Parent = sliderSec
     Instance.new("UICorner", sliderCont).CornerRadius = UDim.new(0, 6)
 
-    local sliderBar = Instance.new("Frame") sliderBar.Size = UDim2.new(1, -20, 0, 6); sliderBar.Position = UDim2.new(0, 10, 0.5, -3); sliderBar.BackgroundColor3 = Color3.fromRGB(40, 35, 60); sliderBar.BorderSizePixel = 0; sliderBar.Parent = sliderCont
+    local sliderBar = Instance.new("Frame") sliderBar.Size = UDim2.new(1, -20, 0, 6); sliderBar.Position = UDim2.new(0, 10, 0.5, -3); sliderBar.BackgroundColor3 = Color3.fromRGB(30, 32, 48); sliderBar.BorderSizePixel = 0; sliderBar.Parent = sliderCont
     Instance.new("UICorner", sliderBar).CornerRadius = UDim.new(0, 3)
 
     local sliderFill = Instance.new("Frame") sliderFill.BackgroundColor3 = Config.Theme.TabActive; sliderFill.BorderSizePixel = 0; sliderFill.Parent = sliderBar
@@ -827,7 +832,7 @@ local function runUnifiedScript()
         local pct = math.clamp((val - minDist) / (maxDist - minDist), 0, 1)
         sliderBtn.Position = UDim2.new(pct, -7, 0.5, -7)
         sliderFill.Size = UDim2.new(pct, 0, 1, 0)
-        sliderLbl.Text = string.format(_L.distEsp, tostring(val))
+        sliderLbl.Text = string.format("► " .. _L.distEsp, tostring(val))
     end
     sliderBtn.InputBegan:Connect(function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then sliderDrag = true end
@@ -885,13 +890,8 @@ local function runUnifiedScript()
         if val == "Off" then hideAllSkeletons() end
     end)
 
-    legAuraController = cCCS(_L.legAura, {
-        {Label = "On", Value = true},
-        {Label = "Off", Value = false}
-    }, function(val) Config.LegendaryAuraEnabled = val end)
-
     local bindSectionFrame = Instance.new("Frame") bindSectionFrame.Size = UDim2.new(1, 0, 0, 58); bindSectionFrame.BackgroundTransparency = 1; bindSectionFrame.Parent = ContentConfig
-    local bindLbl = Instance.new("TextLabel") bindLbl.Size = UDim2.new(1, 0, 0, 18); bindLbl.Font = Enum.Font.GothamBold; bindLbl.TextSize = 11; bindLbl.TextColor3 = Config.Theme.TextSecondary; bindLbl.Text = _L.binds; bindLbl.TextXAlignment = Enum.TextXAlignment.Left; bindLbl.BackgroundTransparency = 1; bindLbl.Parent = bindSectionFrame
+    local bindLbl = Instance.new("TextLabel") bindLbl.Size = UDim2.new(1, 0, 0, 18); bindLbl.Font = Enum.Font.GothamBold; bindLbl.TextSize = 11; bindLbl.TextColor3 = Config.Theme.TextSecondary; bindLbl.Text = "► " .. _L.binds; bindLbl.TextXAlignment = Enum.TextXAlignment.Left; bindLbl.BackgroundTransparency = 1; bindLbl.Parent = bindSectionFrame
 
     local bindContainer = Instance.new("Frame") bindContainer.Size = UDim2.new(1, 0, 0, 32); bindContainer.Position = UDim2.new(0, 0, 0, 22); bindContainer.BackgroundTransparency = 1; bindContainer.Parent = bindSectionFrame
     local bindLayout = Instance.new("UIListLayout") bindLayout.FillDirection = Enum.FillDirection.Horizontal; bindLayout.Padding = UDim.new(0, 6); bindLayout.Parent = bindContainer
@@ -927,7 +927,6 @@ local function runUnifiedScript()
         if targetController then targetController.setValue(Config.AimTarget) end
         if rpgController then rpgController.setValue(Config.RPGAimMode) end
         if skelController then skelController.setValue(Config.SkeletonStyle) end
-        if legAuraController then legAuraController.setValue(Config.LegendaryAuraEnabled) end
         updateSlider(Config.MaxNormalDistance)
         updateFOVSlider(Config.AimFOV)
         uBUT()
@@ -938,7 +937,7 @@ local function runUnifiedScript()
         if not (type(writefile) == "function") then return false end
         local saveData = {
             AimTarget = Config.AimTarget, RPGAimEnabled = Config.RPGAimEnabled, RPGAimMode = Config.RPGAimMode, AimSmooth = Config.AimSmooth, AimMode = Config.AimMode,
-            AimFOV = Config.AimFOV, ShowFOV = Config.ShowFOV, SkeletonStyle = Config.SkeletonStyle, LegendaryAuraEnabled = Config.LegendaryAuraEnabled, MaxNormalDistance = Config.MaxNormalDistance, AutoExecute = Config.AutoExecute,
+            AimFOV = Config.AimFOV, ShowFOV = Config.ShowFOV, SkeletonStyle = Config.SkeletonStyle, MaxNormalDistance = Config.MaxNormalDistance, AutoExecute = Config.AutoExecute,
             Binds = {ToggleMenu = Config.Binds.ToggleMenu.Name, Aimbot = Config.Binds.Aimbot.Name, InvView = Config.Binds.InvView.Name},
             Toggles = {aimEnabled = State.aimEnabled, espEnabled = State.espEnabled, invViewEnabled = State.invViewEnabled, tracersEnabled = State.tracersEnabled}
         }
@@ -960,7 +959,6 @@ local function runUnifiedScript()
         if decoded.AimMode ~= nil then Config.AimMode = decoded.AimMode end
         if decoded.AimFOV ~= nil then Config.AimFOV = tonumber(decoded.AimFOV) or Config.AimFOV end
         if decoded.SkeletonStyle ~= nil then Config.SkeletonStyle = decoded.SkeletonStyle end
-        if decoded.LegendaryAuraEnabled ~= nil then Config.LegendaryAuraEnabled = decoded.LegendaryAuraEnabled end
         if decoded.MaxNormalDistance ~= nil then
             Config.MaxNormalDistance = decoded.MaxNormalDistance
             Config.MaxSpecialDistance = math.floor(decoded.MaxNormalDistance * 1.5)
@@ -1024,20 +1022,21 @@ local function runUnifiedScript()
             local playerWrapper = PlayerRowCache[player.Name]
             if not playerWrapper then
                 playerWrapper = Instance.new("Frame")
-                playerWrapper.Size = UDim2.new(1, -6, 0, 40)
+                playerWrapper.Size = UDim2.new(1, -6, 0, 42)
                 Instance.new("UICorner", playerWrapper).CornerRadius = UDim.new(0, 6)
+                local pStroke = Instance.new("UIStroke") pStroke.Thickness = 1; pStroke.Color = Color3.fromRGB(30, 32, 48); pStroke.Parent = playerWrapper
                 
                 local userBtn = Instance.new("TextLabel")
-                userBtn.Name = "UserBtn"; userBtn.Size = UDim2.new(1, -120, 1, 0); userBtn.Position = UDim2.new(0, 10, 0, 0)
+                userBtn.Name = "UserBtn"; userBtn.Size = UDim2.new(1, -125, 1, 0); userBtn.Position = UDim2.new(0, 12, 0, 0)
                 userBtn.BackgroundTransparency = 1; userBtn.Font = Enum.Font.GothamBold; userBtn.TextSize = 11; userBtn.TextXAlignment = Enum.TextXAlignment.Left; userBtn.Parent = playerWrapper
                 
                 local teamBtn = Instance.new("TextButton")
-                teamBtn.Name = "TeamBtn"; teamBtn.Size = UDim2.new(0, 50, 0, 24); teamBtn.Position = UDim2.new(1, -105, 0.5, -12)
+                teamBtn.Name = "TeamBtn"; teamBtn.Size = UDim2.new(0, 52, 0, 26); teamBtn.Position = UDim2.new(1, -112, 0.5, -13)
                 teamBtn.Font = Enum.Font.GothamBold; teamBtn.TextSize = 9; teamBtn.TextColor3 = Config.Theme.TextPrimary
                 Instance.new("UICorner", teamBtn).CornerRadius = UDim.new(0, 4); teamBtn.Parent = playerWrapper
                 
                 local pinBtn = Instance.new("TextButton")
-                pinBtn.Name = "PinBtn"; pinBtn.Size = UDim2.new(0, 45, 0, 24); pinBtn.Position = UDim2.new(1, -50, 0.5, -12)
+                pinBtn.Name = "PinBtn"; pinBtn.Size = UDim2.new(0, 48, 0, 26); pinBtn.Position = UDim2.new(1, -54, 0.5, -13)
                 pinBtn.Font = Enum.Font.GothamBold; pinBtn.TextSize = 9; pinBtn.TextColor3 = Config.Theme.TextPrimary
                 Instance.new("UICorner", pinBtn).CornerRadius = UDim.new(0, 4); pinBtn.Parent = playerWrapper
                 
@@ -1070,7 +1069,7 @@ local function runUnifiedScript()
     end
 
     local function gRC(rarity)
-        local colors = {Common = Color3.fromRGB(0, 255, 100), Rare = Color3.fromRGB(0, 150, 255), Epic = Color3.fromRGB(180, 50, 255), Legendary = Color3.fromRGB(255, 200, 0)}
+        local colors = {Common = Color3.fromRGB(0, 255, 136), Rare = Color3.fromRGB(0, 180, 255), Epic = Color3.fromRGB(180, 50, 255), Legendary = Color3.fromRGB(255, 215, 0)}
         return colors[rarity] or Color3.fromRGB(255, 255, 255)
     end
 
@@ -1103,7 +1102,6 @@ local function runUnifiedScript()
         end
         local tools = {}
         if not player then return tools end
-        local hasLegendary = false
         local backpack = player:FindFirstChildOfClass("Backpack")
         local character = player.Character
         local function scanContainer(container)
@@ -1112,25 +1110,11 @@ local function runUnifiedScript()
                 if tool:IsA("Tool") then
                     local realName = mTN(tool)
                     local rarity = tool:GetAttribute("RarityName") or "Common"
-                    if rarity == "Legendary" then hasLegendary = true end
                     table.insert(tools, {name = realName, rarity = rarity, equipped = (container == character)})
                 end
             end
         end
         scanContainer(backpack); scanContainer(character)
-        if hasLegendary then
-            if not State.pinnedPlayers[player.Name] then
-                State.pinnedPlayers[player.Name] = true
-                State.autoPinned[player.Name] = true
-                task.spawn(rPL)
-            end
-        else
-            if State.autoPinned[player.Name] then
-                State.pinnedPlayers[player.Name] = nil
-                State.autoPinned[player.Name] = nil
-                task.spawn(rPL)
-            end
-        end
         LastToolScan[player.Name] = {time = now, tools = tools}
         return tools
     end
@@ -1185,8 +1169,6 @@ local function runUnifiedScript()
                     if head and root and hum then
                         local isPinned, isTeam = State.pinnedPlayers[player.Name], State.teamPlayers[player.Name]
                         local isLocked = (State.lockedTarget == player)
-                        local isLegendaryOwner = State.autoPinned[player.Name]
-                        local showLegAura = Config.LegendaryAuraEnabled and isLegendaryOwner
                         local distance = math.floor((root.Position - myPosition).Magnitude)
                         local maxDist = (isPinned or isTeam) and Config.MaxSpecialDistance or Config.MaxNormalDistance
                         
@@ -1198,7 +1180,7 @@ local function runUnifiedScript()
                                 if State.espEnabled then
                                     master.EspLabel.Visible = true
                                     if isLocked then
-                                        master.EspLabel.TextColor3 = Color3.fromRGB(255, 30, 30)
+                                        master.EspLabel.TextColor3 = Color3.fromRGB(255, 38, 88)
                                     else
                                         master.EspLabel.TextColor3 = isTeam and Config.Theme.EspTeam or (isPinned and Config.Theme.EspPinned or Config.Theme.EspNormal)
                                     end
@@ -1220,7 +1202,7 @@ local function runUnifiedScript()
                                             local line = Instance.new("TextLabel")
                                             line.Size = UDim2.new(0, 145, 0, 14); line.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
                                             line.BackgroundTransparency = 0.7; line.Font = Enum.Font.GothamBold; line.TextStrokeTransparency = 0.5
-                                            local equipTag = toolData.equipped and "→ " or ""
+                                            local equipTag = toolData.equipped and "👉 " or ""
                                             line.Text = equipTag .. toolData.name .. " "; line.TextColor3 = gRC(toolData.rarity); line.LayoutOrder = i
                                             Instance.new("UICorner", line).CornerRadius = UDim.new(0, 4)
                                             if toolData.equipped then line.BackgroundColor3 = Color3.fromRGB(45, 15, 25) end
@@ -1235,7 +1217,7 @@ local function runUnifiedScript()
                                 rME(player)
                             end
 
-                            if isTeam or isLocked or showLegAura then
+                            if isTeam or isLocked then
                                 local hl = char:FindFirstChild("BsAura")
                                 if not hl then
                                     hl = Instance.new("Highlight")
@@ -1243,11 +1225,9 @@ local function runUnifiedScript()
                                     hl.OutlineColor = Color3.fromRGB(255, 255, 255); hl.Parent = char
                                 end
                                 if isTeam then
-                                    hl.FillColor = Color3.fromRGB(0, 255, 140)
-                                elseif isLocked then
-                                    hl.FillColor = Color3.fromRGB(255, 0, 0)
+                                    hl.FillColor = Color3.fromRGB(0, 255, 136)
                                 else
-                                    hl.FillColor = Color3.fromRGB(255, 215, 0)
+                                    hl.FillColor = Color3.fromRGB(255, 38, 88)
                                 end
                                 hl.FillTransparency = 0.35; hl.OutlineTransparency = 0
                             else
@@ -1561,7 +1541,9 @@ local function runUnifiedScript()
             return
         end
 
-        if input.UserInputType == Enum.UserInputType.MouseButton2 or input.KeyCode == Config.Binds.GamepadAim then 
+        local activeGamepadAimKey = isPlayerInVehicle() and Config.Binds.GamepadAimCar or Config.Binds.GamepadAimFoot
+
+        if input.UserInputType == Enum.UserInputType.MouseButton2 or input.KeyCode == activeGamepadAimKey then 
             State.holdingAimTrigger = true 
         end
 
@@ -1612,7 +1594,7 @@ local function runUnifiedScript()
 
     sC(UserInputService.InputEnded, function(input)
         if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then State.isShooting = false end
-        if input.UserInputType == Enum.UserInputType.MouseButton2 or input.KeyCode == Config.Binds.GamepadAim then
+        if input.UserInputType == Enum.UserInputType.MouseButton2 or input.KeyCode == Enum.KeyCode.ButtonL2 or input.KeyCode == Enum.KeyCode.ButtonL1 then
             State.holdingAimTrigger = false; State.lockedTarget = nil; trackClear()
         end
     end)
@@ -1664,7 +1646,10 @@ local function runUnifiedScript()
         pcall(function() gui:Destroy() end)
     end
 
-    closeBtn.MouseButton1Click:Connect(fullCleanup)
+    closeBtn.MouseButton1Click:Connect(function()
+        TweenService:Create(closeBtn, TweenInfo.new(0.08), {Size = UDim2.new(0, 24, 0, 24)}):Play()
+        task.delay(0.05, fullCleanup)
+    end)
 
     sC(Players.PlayerAdded, function(p) cAAT(p); rPL() end)
     sC(Players.PlayerRemoving, function(p)
@@ -1698,11 +1683,11 @@ z.Parent = p()
 
 local function A(B, C)
     if C then 
-        B.BackgroundColor3 = Color3.fromRGB(0, 140, 220)
+        B.BackgroundColor3 = Color3.fromRGB(157, 0, 255)
         B.TextColor3 = Color3.fromRGB(255, 255, 255)
     else 
-        B.BackgroundColor3 = Color3.fromRGB(28, 28, 40)
-        B.TextColor3 = Color3.fromRGB(160, 165, 180)
+        B.BackgroundColor3 = Color3.fromRGB(24, 26, 38)
+        B.TextColor3 = Color3.fromRGB(140, 150, 180)
     end
 end
 
@@ -1710,21 +1695,21 @@ local function D(E, F)
     local G = Instance.new("Frame")
     G.Size = UDim2.new(0, E, 0, F)
     G.Position = UDim2.new(0.5, -math.floor(E/2), 0.5, -math.floor(F/2))
-    G.BackgroundColor3 = Color3.fromRGB(10, 10, 15)
+    G.BackgroundColor3 = Color3.fromRGB(9, 10, 15)
     G.BorderSizePixel = 0
     G.ClipsDescendants = true
     G.Parent = z
     Instance.new("UICorner", G).CornerRadius = UDim.new(0, 12)
     local H = Instance.new("UIStroke")
-    H.Color = Color3.fromRGB(0, 180, 255)
+    H.Color = Color3.fromRGB(157, 0, 255)
     H.Thickness = 1.5
     H.Transparency = 0.2
     H.Parent = G
     local I = Instance.new("UIGradient")
     I.Color = ColorSequence.new({
-        ColorSequenceKeypoint.new(0, Color3.fromRGB(15, 12, 28)),
-        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(8, 8, 12)),
-        ColorSequenceKeypoint.new(1, Color3.fromRGB(5, 15, 20))
+        ColorSequenceKeypoint.new(0, Color3.fromRGB(22, 12, 38)),
+        ColorSequenceKeypoint.new(0.5, Color3.fromRGB(9, 10, 15)),
+        ColorSequenceKeypoint.new(1, Color3.fromRGB(6, 15, 25))
     })
     I.Rotation = 45
     I.Parent = G
@@ -1734,24 +1719,24 @@ end
 local function J(K, L, M, N, O)
     local P = Instance.new("Frame")
     P.Size = UDim2.new(1, 0, 0, 44)
-    P.BackgroundColor3 = Color3.fromRGB(14, 14, 22)
+    P.BackgroundColor3 = Color3.fromRGB(15, 16, 24)
     P.BorderSizePixel = 0
     P.Parent = K
     Instance.new("UICorner", P).CornerRadius = UDim.new(0, 12)
     local Q = Instance.new("Frame")
     Q.Size = UDim2.new(1, 0, 0, 12)
     Q.Position = UDim2.new(0, 0, 1, -12)
-    Q.BackgroundColor3 = Color3.fromRGB(14, 14, 22)
+    Q.BackgroundColor3 = Color3.fromRGB(15, 16, 24)
     Q.BorderSizePixel = 0
     Q.Parent = P
     local R = Instance.new("TextLabel")
-    R.Font = Enum.Font.Michroma
-    R.TextSize = 10
+    R.Font = Enum.Font.GothamBold
+    R.TextSize = 11
     R.TextColor3 = Color3.fromRGB(255, 255, 255)
-    R.Size = UDim2.new(0, 120, 1, 0)
+    R.Size = UDim2.new(0, 140, 1, 0)
     R.Position = UDim2.new(0, 12, 0, 0)
     R.BackgroundTransparency = 1
-    R.Text = L
+    R.Text = "⚡ " .. L
     R.TextXAlignment = Enum.TextXAlignment.Left
     R.Parent = P
     local S = O and 140 or 108
@@ -1776,11 +1761,11 @@ local function J(K, L, M, N, O)
     local W = Instance.new("TextButton")
     W.Size = UDim2.new(0, 26, 0, 26)
     W.Position = UDim2.new(1, -34, 0.5, -13)
-    W.Text = "X"
-    W.TextSize = 14
+    W.Text = "✕"
+    W.TextSize = 12
     W.Font = Enum.Font.GothamBold
-    W.TextColor3 = Color3.fromRGB(255, 90, 110)
-    W.BackgroundColor3 = Color3.fromRGB(28, 16, 22)
+    W.TextColor3 = Color3.fromRGB(255, 75, 110)
+    W.BackgroundColor3 = Color3.fromRGB(38, 16, 24)
     W.Parent = P
     Instance.new("UICorner", W).CornerRadius = UDim.new(0, 6)
     W.MouseButton1Click:Connect(N)
@@ -1791,13 +1776,13 @@ local function X(Y, Z, aa, ab, ac, ad)
     local ae = Instance.new("TextButton")
     ae.Size = UDim2.new(1, -24, 0, 62)
     ae.Position = UDim2.new(0, 12, 0, Z)
-    ae.BackgroundColor3 = Color3.fromRGB(16, 16, 26)
+    ae.BackgroundColor3 = Color3.fromRGB(16, 17, 26)
     ae.Text = ""
     ae.Parent = Y
     Instance.new("UICorner", ae).CornerRadius = UDim.new(0, 8)
     local af = Instance.new("UIStroke")
     af.Thickness = 1.2
-    af.Color = Color3.fromRGB(32, 32, 48)
+    af.Color = Color3.fromRGB(30, 32, 48)
     af.Transparency = 0.4
     af.Parent = ae
     local ag = Instance.new("TextLabel")
@@ -1805,24 +1790,24 @@ local function X(Y, Z, aa, ab, ac, ad)
     ag.Size = UDim2.new(1, -32, 0, 18); ag.Position = UDim2.new(0, 12, 0, 8); ag.BackgroundTransparency = 1
     ag.TextXAlignment = Enum.TextXAlignment.Left; ag.Text = aa; ag.Parent = ae
     local ah = Instance.new("TextLabel")
-    ah.Font = Enum.Font.Ubuntu; ah.TextSize = 10; ah.TextColor3 = Color3.fromRGB(130, 140, 160)
+    ah.Font = Enum.Font.Gotham; ah.TextSize = 10; ah.TextColor3 = Color3.fromRGB(140, 150, 180)
     ah.Size = UDim2.new(1, -32, 0, 28); ah.Position = UDim2.new(0, 12, 0, 28); ah.BackgroundTransparency = 1
     ah.TextXAlignment = Enum.TextXAlignment.Left; ah.TextWrapped = true; ah.Text = ab; ah.Parent = ae
     local ai = Instance.new("TextLabel")
-    ai.Font = Enum.Font.GothamBold; ai.TextSize = 13; ai.TextColor3 = Color3.fromRGB(60, 60, 80)
+    ai.Font = Enum.Font.GothamBold; ai.TextSize = 13; ai.TextColor3 = Color3.fromRGB(60, 65, 85)
     ai.Size = UDim2.new(0, 16, 1, 0); ai.Position = UDim2.new(1, -20, 0, 0); ai.BackgroundTransparency = 1
-    ai.Text = ">"; ai.Parent = ae
+    ai.Text = "►"; ai.Parent = ae
     ae.MouseEnter:Connect(function()
-        c:Create(ae, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(22, 22, 38)}):Play()
+        c:Create(ae, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(24, 26, 38)}):Play()
         c:Create(af, TweenInfo.new(0.15), {Color = ac, Transparency = 0}):Play()
         c:Create(ag, TweenInfo.new(0.15), {TextColor3 = ac}):Play()
         c:Create(ai, TweenInfo.new(0.15), {TextColor3 = ac}):Play()
     end)
     ae.MouseLeave:Connect(function()
-        c:Create(ae, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(16, 16, 26)}):Play()
-        c:Create(af, TweenInfo.new(0.15), {Color = Color3.fromRGB(32, 32, 48), Transparency = 0.4}):Play()
+        c:Create(ae, TweenInfo.new(0.15), {BackgroundColor3 = Color3.fromRGB(16, 17, 26)}):Play()
+        c:Create(af, TweenInfo.new(0.15), {Color = Color3.fromRGB(30, 32, 48), Transparency = 0.4}):Play()
         c:Create(ag, TweenInfo.new(0.15), {TextColor3 = Color3.fromRGB(245, 245, 250)}):Play()
-        c:Create(ai, TweenInfo.new(0.15), {TextColor3 = Color3.fromRGB(60, 60, 80)}):Play()
+        c:Create(ai, TweenInfo.new(0.15), {TextColor3 = Color3.fromRGB(60, 65, 85)}):Play()
     end)
     ae.MouseButton1Click:Connect(ad)
     return ag, ah
@@ -1861,14 +1846,14 @@ do
     local b0, b1, b2 = J(a_, "HERMANOS CP", nil, function() z:Destroy() end, false)
     aj(b0, a_)
     local b3 = Instance.new("TextLabel")
-    b3.Font = Enum.Font.Ubuntu; b3.TextSize = 11; b3.TextColor3 = Color3.fromRGB(150, 160, 185)
+    b3.Font = Enum.Font.GothamBold; b3.TextSize = 10; b3.TextColor3 = Color3.fromRGB(140, 150, 180)
     b3.Size = UDim2.new(1, -24, 0, 18); b3.Position = UDim2.new(0, 12, 0, 50); b3.BackgroundTransparency = 1
     b3.TextXAlignment = Enum.TextXAlignment.Left; b3.Text = o().choose; b3.Parent = a_
     
-    local b6, b7 = X(a_, 76, o().pc, o().pcD, Color3.fromRGB(0, 210, 255), function()
+    local b6, b7 = X(a_, 76, o().pc, o().pcD, Color3.fromRGB(0, 240, 255), function()
         ar(a_, aC2, aY, function() z:Destroy() s() end)
     end)
-    local b8, b9 = X(a_, 146, o().mob, o().mobD, Color3.fromRGB(0, 255, 140), function()
+    local b8, b9 = X(a_, 146, o().mob, o().mobD, Color3.fromRGB(0, 255, 136), function()
         ar(a_, aC2, aY, function() z:Destroy() s() end)
     end)
     
