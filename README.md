@@ -1,57 +1,103 @@
+--[========================================================================]--
+-- Script: Xbox Console Server Finder & Smart Hopper for Delta
+-- Game: BlockSpin (https://www.roblox.com/games/104715542330896/BlockSpin)
+-- Description: Automatically hops between full servers until it detects 
+--              a session populated predominantly by console/gamepad players.
+--[========================================================================]--
+
 local TeleportService = game:GetService("TeleportService")
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
-local UserInputService = game:GetService("UserInputService")
+local GuiService = game:GetService("GuiService")
 
--- Función para verificar si el servidor actual es mayoritariamente de consola/mando
+local LocalPlayer = Players.LocalPlayer
+local PlaceId = game.PlaceId
+
+-- Configuration
+local MIN_PLAYERS_PERCENTAGE = 0.85 -- 85% o mas de la sala debe ser de consola
+local CHECK_DELAY = 4               -- Segundos de espera para que carguen los jugadores al entrar
+
+-- Notificación visual rápida en Delta
+local function notify(text)
+    pcall(function()
+        game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "Xbox Server Finder",
+            Text = text,
+            Duration = 3
+        })
+    end)
+end
+
+-- Función para evaluar si el servidor actual es de consola/mando
 local function isConsoleServer()
-    local consoleCount = 0
     local totalPlayers = #Players:GetPlayers()
+    if totalPlayers <= 1 then return false end
+    
+    local consoleCount = 0
     
     for _, player in ipairs(Players:GetPlayers()) do
-        -- Nota: La detección exacta de plataforma desde el cliente a veces requiere 
-        -- leer el tipo de dispositivo o interfaz con el que cargaron.
-        -- Los scripts avanzados revisan si usan Gamepad o si el icono de plataforma coincide.
-        if player:GetAttribute("Platform") == "Xbox" or player:GetAttribute("IsConsole") == true then
+        -- Detección por plataforma o si usa mando/interfaz de consola
+        local success, platform = pcall(function()
+            return player.Platform
+        end)
+        
+        -- Si la API detecta consola o si el tipo de dispositivo/input apunta a Xbox/Console
+        if success and (platform == Enum.Platform.XboxOne or platform == Enum.Platform.XBoxS or platform == Enum.Platform.PS4 or platform == Enum.Platform.PS5) then
             consoleCount = consoleCount + 1
+        else
+            -- Verificación alternativa por atributos comunes o sesiones cruzadas
+            local hasAttribute, isConsoleAttr = pcall(function()
+                return player:GetAttribute("IsConsole") or player:GetAttribute("Platform")
+            end)
+            if hasAttribute and (isConsoleAttr == "Xbox" or isConsoleAttr == true) then
+                consoleCount = consoleCount + 1
+            end
         end
     end
     
-    -- Si el 90% o más son de consola, considerarlo válido
-    if totalPlayers > 0 and (consoleCount / totalPlayers) >= 0.9 then
-        return true
-    end
-    return false
+    local ratio = consoleCount / totalPlayers
+    return ratio >= MIN_PLAYERS_PERCENTAGE
 end
 
--- Función de salto automático enfocada en servidores llenos
+-- Función para buscar y saltar a servidores llenos
 local function forceConsoleHop()
-    local url = "https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/public?sortOrder=Desc&limit=100"
+    notify("Buscando otro servidor lleno de consola...")
+    
     local success, response = pcall(function()
+        local url = string.format("https://games.roblox.com/v1/games/%d/servers/public?sortOrder=Desc&limit=100", PlaceId)
         return HttpService:JSONDecode(game:HttpGet(url))
     end)
     
     if success and response and response.data then
         for _, server in ipairs(response.data) do
-            -- Filtra servidores que estén LLENOS (ej. que tengan espacio libre menor a 3 o 4 personas)
-            -- y que no sean tu servidor actual
+            -- Filtra servidores llenos (ej. que queden menos de 4 espacios libres) y que no sea el actual
             if server.playing >= (server.maxPlayers - 4) and server.id ~= game.JobId then
-                TeleportService:TeleportToPlaceInstance(game.PlaceId, server.id, Players.LocalPlayer)
+                pcall(function()
+                    TeleportService:TeleportToPlaceInstance(PlaceId, server.id, LocalPlayer)
+                end)
+                task.wait(8) -- Espera prudente para evitar bucles de teletransporte fallidos
                 break
             end
         end
+    else
+        notify("Error al conectar con la API. Reintentando...")
+        task.wait(3)
     end
 end
 
--- Bucle de ejecución hasta dar con el objetivo de consola lleno
+-- Ciclo principal del buscador
+notify("Iniciando buscador de servidores Xbox...")
+
 task.spawn(function()
     while true do
-        task.wait(3) -- Espera unos segundos tras cargar el servidor para analizar a la gente
+        task.wait(CHECK_DELAY)
+        
         if isConsoleServer() then
-            print("¡Servidor de consola lleno encontrado! Quedándose aquí.")
-            break -- Detiene el buscador porque encontró el servidor perfecto
+            notify("¡Servidor exclusivo de consola encontrado y lleno!")
+            print("[Xbox Finder]: ¡Listo! Te has quedado en un servidor de consola.")
+            break -- Detiene el script porque ya encontró la sala ideal
         else
-            forceConsoleHop() -- Si hay jugadores de PC o está vacío, sigue buscando
+            forceConsoleHop()
         end
     end
 end)
